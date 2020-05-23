@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './res/css/App.css';
 
+import store from './redux/store'
+import { Provider } from 'react-redux'
+import LocationInput from './components/LocationInput';
+import {HashRouter ,Route} from 'react-router-dom'
+import WeatherContent from './components/WeatherContent'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <HashRouter>
+        <div className="App">
+          <Route exact path={['/', '/:location']} component={WeatherContent}/>
+        </div>
+      </HashRouter>
+    </Provider>
+
   );
 }
 

@@ -1,0 +1,76 @@
+.weather{
+    width:100vw;
+    height: 100vh;
+}
+.scroll-hidden{
+    overflow: hidden;
+}
+.chart-content{
+    display: inline-block;
+    width: 70vw;
+    padding: 5px;
+}
+
+.chart-card{
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px 1px #cccccc;
+    padding: 10px;
+}
+.chart-card > h2{
+    padding-left: 10px;
+    text-align: left;
+}
+h2.max{
+    border-left: 7px solid #e2380e;
+}
+h2.min{
+    border-left: 7px solid #1486e4;
+}
+h2.humidity{
+    border-left: 7px solid #373c63;
+}
+.scroll-hidden .loading-mask{
+    display: block;
+}
+.loading-mask{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    background-color: #cccccc67;
+    z-index: 5;
+    width: 100vw;
+    height: 100%;
+    text-align: center;
+    display: none;
+}
+.loading-mask::after{
+    content: '';
+    display: inline-block;
+    height: 100vh;
+    vertical-align: middle;
+  }
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
