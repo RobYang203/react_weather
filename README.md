@@ -10,7 +10,7 @@
 
 ### 流程
 1. 輸入地址， **input onChange** 偵測， 不為空值呼叫 **weatherAPI**搜尋可用地名，用 dispatch 傳入參數顯示列表
-2. 呼叫時延遲**1s**呼叫，當持續輸入**取消前次呼叫**
+2. 呼叫時延遲**0.5s**呼叫，當持續輸入**取消前次呼叫**
 3. 顯示地名在自動填補，選擇後保存 **woeid**，並藉由 **woeid**呼叫 **weatherAPI**搜尋未來五天天氣
 4. 在 reducer 處理資訊
     ```js
@@ -18,7 +18,9 @@
             maxTempList :[],
             minTempList :[],
             humidityList :[],
-            locationList: []
+            locationList: [],
+            woeid : 0,
+            city: ''
         }
         const temp = {
             "yyyy-MM-dd":value
