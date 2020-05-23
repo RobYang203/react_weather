@@ -9,13 +9,14 @@ const  BarChartHOC = (BasicBar,drawPieList)=>
 
         }
         drawPieChart =(ctx ,data, canvas_W , canvas_H)=>{
-            const {pieColor , padding} = this.props;
-            drawPieList(ctx ,data , canvas_W , canvas_H , this.props.pieColor ,padding);
+            const {pieColor , padding , titleList} = this.props;
+            drawPieList(ctx ,data , canvas_W , canvas_H , pieColor ,titleList ,padding);
         }
 
         render(){
             return(
-                <BasicBar {...this.props} drawChat={this.drawPieChart} />       
+                <BasicBar {...this.props} drawChat={this.drawPieChart} >
+                </BasicBar>     
             )
             
         }

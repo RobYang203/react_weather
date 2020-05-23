@@ -31,7 +31,7 @@ function WeatherContent(props) {
             <div className={`chart-content`}>
                 <BarChart title="Max Temperatrue" className="max" data={props.maxTempList} barColor={["red"]} padding={50}/>
                 <BarChart title="Min Temperatrue" className="min" data={props.minTempList} barColor={["blue"]} padding={50} />
-                <PieChart title="Humidity" className="humidity"  data={props.humidityList} pieColor={["gray", "red"]} padding={20} />
+                <PieChart title="Humidity" className="humidity"  data={props.humidityList} pieColor={["gray", "red"]} titleList={["Humidity"]} padding={20} />
             </div>
             <div className="loading-mask">
                 <div className="loader"></div>

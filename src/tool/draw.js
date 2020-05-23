@@ -13,7 +13,7 @@ export const drawBarChart = (ctx ,data , canvasWidth , canvasHeight , colorList 
     drawBarList(ctx , canvasWidth , canvasHeight  - 100, data, maxValue , colorList[0] , padding);
 }
 
-export const drawPieList = (ctx ,data, canvasWidth , canvasHeight , colorList , padding)=>{
+export const drawPieList = (ctx ,data, canvasWidth , canvasHeight , colorList ,titleList , padding)=>{
     if(data.length === 0)
         return;
 
@@ -35,7 +35,8 @@ export const drawPieList = (ctx ,data, canvasWidth , canvasHeight , colorList , 
         const angleList = [value_angle , empty_angle];
         const color = [ colorList[0] , colorList[1]];
         const slicePieCenterX = centerX + (singleWidth * i);
-
+        drawBar(ctx , 0 ,0, 15 , 15 , colorList[0]);
+        drawText(ctx,titleList[0], 30 ,15 ,"#000", "15px Arial")
         let start_angle = 0;
         for(let j = 0 ; j < 2; j++){
             const slice_angle = angleList[j];

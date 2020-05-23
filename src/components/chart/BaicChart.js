@@ -19,8 +19,9 @@ class BaicChart extends React.Component{
             <div ref={(ref)=>{ this.cardRef  = ref}} className="chart-card">
                 <h2 className={this.props.className} >{this.props.title}</h2>
                 <canvas ref={(ref)=>{ this.canvasRef = ref}} width={this.state.canvas_W} height={300} >
-                    
+          
                 </canvas>
+                {this.props.children}
             </div>
         )
     }
