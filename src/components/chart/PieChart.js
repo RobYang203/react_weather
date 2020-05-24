@@ -15,7 +15,7 @@ const  BarChartHOC = (BasicBar,drawPieList)=>
 
         render(){
             return(
-                <BasicBar {...this.props} drawChat={this.drawPieChart} >
+                <BasicBar {...this.props} mobile={true} drawChat={this.drawPieChart} >
                 </BasicBar>     
             )
             

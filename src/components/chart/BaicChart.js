@@ -18,7 +18,7 @@ class BaicChart extends React.Component{
         return(
             <div ref={(ref)=>{ this.cardRef  = ref}} className="chart-card">
                 <h2 className={this.props.className} >{this.props.title}</h2>
-                <canvas ref={(ref)=>{ this.canvasRef = ref}} width={this.state.canvas_W} height={300} >
+                <canvas ref={(ref)=>{ this.canvasRef = ref}} width={this.state.canvas_W} height={this.state.canvas_H} >
           
                 </canvas>
                 {this.props.children}
@@ -28,9 +28,10 @@ class BaicChart extends React.Component{
 
     componentDidMount(){
         const width = this.cardRef.clientWidth;
-
+        const height = width < 400 && this.props.mobile? width/2 * 3 + 50:this.state.canvas_H;
         this.setState({
             canvas_W:width,
+            canvas_H:height
         });
     }
 

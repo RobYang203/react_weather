@@ -49,16 +49,18 @@ export default (state=initalState , action)=>{
 
         list.forEach((item)=>{
             const {max_temp , min_temp , humidity ,applicable_date} =item;
+            const dateArray = applicable_date.split('-');
+            const recordDate = `${dateArray[1]}-${dateArray[2]}`;
             let tmp = {};
-            tmp[applicable_date] = max_temp;
+            tmp[recordDate] = max_temp;
             maxList.push({
                 ...tmp
             });
-            tmp[applicable_date] = min_temp;
+            tmp[recordDate] = min_temp;
             minList.push({
                 ...tmp
             });
-            tmp[applicable_date] = humidity;
+            tmp[recordDate] = humidity;
             humidityList.push({
                 ...tmp
             });

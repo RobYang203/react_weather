@@ -74,3 +74,13 @@ h2.humidity{
         transform: rotate(360deg);
     }
 }
+
+
+@media screen AND (max-width:650px){
+    .chart-content{
+        width: 90vw;
+    }
+    .chart-card{
+        padding: 5px;
+    }
+}

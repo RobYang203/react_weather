@@ -1,4 +1,4 @@
-import {apiUrl} from '../config/dataConfig'
+import {apiUrl , cors} from '../config/dataConfig'
 
 export const fetchLoactionList = async (key)=>{
     const action = `search/?query=${key}`;
@@ -25,11 +25,12 @@ export const fetchLoactionWeatherByDate = async (woeid , dateString)=>{
 
 }
 const callAPI =  (action , value)=>{
-    const url = `${apiUrl}${action}`;
-    const options = {
-        headers:{
-            "Access-Control-Allow-Origin": "*"
-        }
+    const url = `${cors}${apiUrl}${action}`;
+
+    const header = new Headers();
+    header.append("Access-Control-Allow-Origin" , "*");
+    const options ={
+        headers:header
     }
     return fetch(url,options);
 }

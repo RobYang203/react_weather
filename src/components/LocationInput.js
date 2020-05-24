@@ -52,14 +52,17 @@ function LocationInput({locationList , getLocation , localValue}){
     },[localValue]);
     return(
         <div className="location-search">
-            <input ref={inputRef} type="text" value={inputValue} list="locationList" onInput={onLoactionChange} />
-            <datalist id="locationList" >
-                {optionList}
-            </datalist>
+            <div className="input-area">
+                <input ref={inputRef} type="text" value={inputValue} list="locationList" onInput={onLoactionChange} />
+                <datalist id="locationList" >
+                    {optionList}
+                </datalist>
 
-            <button className="btnSearch" onClick={onSearchClick}>
-                <i className="fa fa-search fa-2x"></i>
-            </button>
+                <button className="btnSearch" onClick={onSearchClick}>
+                    <i className="fa fa-search fa-2x"></i>
+                </button>
+            </div>
+            
         </div>
     );
 
